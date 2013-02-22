@@ -42,7 +42,7 @@ class Spree::Blogs::PostsController < Spree::BaseController
   end
 
   def show
-    @post = default_scope.includes(:tags, :images, :products).find_by_path(params[:id].to_i) rescue nil
+    @post = default_scope.includes(:tags, :images, :products).find_by_path(params[:id]) rescue nil
     return redirect_to archive_posts_path unless @post
   end
 
